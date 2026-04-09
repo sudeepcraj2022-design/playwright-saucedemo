@@ -15,9 +15,11 @@ export class ProductsPage extends BasePage {
     //Action methods
     async verifyPageLoaded() {
         await expect(this.page).toHaveURL(/inventory.html/);
-        await expect(this.inventoryList).toBeVisible();
     }
 
     //Getter methods
+    getInventoryList(){
+        return this.inventoryList;
+    }
 
 }
