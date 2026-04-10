@@ -6,7 +6,7 @@ export class LoginPage extends BasePage {
     private readonly emailInput: Locator;
     private readonly passwordInput: Locator;
     private readonly loginButton: Locator;
-    private readonly errorMessage: Locator;
+    private readonly errorMessages: Locator;
 
 
     constructor(page: Page) {
@@ -15,7 +15,7 @@ export class LoginPage extends BasePage {
         this.emailInput = page.getByRole('textbox', { name: 'Username' });
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Login' });
-        this.errorMessage = page.locator('[data-test="error"]')
+        this.errorMessages = page.locator('[data-test="error"]')
     
     }
 
@@ -40,8 +40,8 @@ export class LoginPage extends BasePage {
     }
 
     //Getter methods
-    getErrorMessage(){
-        return this.errorMessage;
+    get errorMessage(){
+        return this.errorMessages;
     }
 
 
