@@ -11,7 +11,6 @@ test.describe('Login functionality', () => {
         await loginPage.navigateToLoginPage();
     });
 
-
     test('Login successfully with valid credentials', { tag: ['@smoke', '@TC001'] }, async ({ loginPage, productsPage }) => {
         await loginPage.login(ENV.USERNAME, ENV.PASSWORD);
 

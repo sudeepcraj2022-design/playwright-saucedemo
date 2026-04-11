@@ -4,7 +4,10 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "strict": true,
-    "baseUrl": ".",
+    "baseUrl": ".", 
+    "esModuleInterop": true,                  // Added for better library imports
+    "skipLibCheck": true,                     // Added for faster, error-free runs
+    "forceConsistentCasingInFileNames": true, // Added for Linux/CI compatibility
     "paths": {
       "@pages/*": [
         "pages/*"
@@ -17,6 +20,12 @@
       ],
       "@config/*": [
         "config/*"
+      ],
+      "@constants/*": [
+        "constants/*"
+      ],
+      "@tests/*": [
+        "tests/*"
       ]
     },
     "types": [
