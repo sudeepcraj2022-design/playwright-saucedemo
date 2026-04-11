@@ -7,7 +7,7 @@ test.describe('Product verification', () => {
     })
 
 
-    test('Add an item to cart then remove it', async ({ productsPage }) => {
+    test('Add an item to cart then remove it', { tag: ['@smoke', '@TC015'] }, async ({ productsPage }) => {
         await productsPage.addProductToCart(ProductNames.BACKPACK);
         const cartCount = await productsPage.getCartCount();
         expect(cartCount).toBe(1);
@@ -17,7 +17,7 @@ test.describe('Product verification', () => {
         expect(updatedCartCount).toBe(0);
     })
 
-    test('Add multiple items to cart then remove it', async ({ productsPage }) => {
+    test('Add multiple items to cart then remove it', { tag: ['@TC0016'] }, async ({ productsPage }) => {
         await productsPage.addMultipleProductsToCart([ProductNames.BACKPACK, ProductNames.BIKE_LIGHT])
         const cartCount = await productsPage.getCartCount();
         expect(cartCount).toBe(2);
@@ -27,7 +27,7 @@ test.describe('Product verification', () => {
         expect(updatedCartCount).toBe(0);
     })
 
-    test('Add an item and view it in cart', async ({ productsPage, cartPage }) => {
+    test('Add an item and view it in cart',{ tag: ['@TC0017'] }, async ({ productsPage, cartPage }) => {
         const expectedProduct = ProductNames.BACKPACK;
 
         await productsPage.addProductToCart(expectedProduct);
